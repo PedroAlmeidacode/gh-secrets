@@ -10,9 +10,9 @@ env:
 jobs:
   test:
     env:
-      MONGO_DB_CLUSTER_ADRESS: cluster0.14dsndas.mongodb.net
-      MONGO_DB_USERNAME: pedroalmeida
-      MONGO_DB_PASSWORD: fjkdaslkfjafAFSdsklfjadlsfFASf
+      MONGO_DB_CLUSTER_ADRESS: cluster0.g6zpaz3.mongodb.net
+      MONGO_DB_USERNAME: plsalmeida18
+      MONGO_DB_PASSWORD: 5JPxHDkNnZPyktfd
       PORT: 3000
     environment: testing
     runs-on: ubuntu-latest
@@ -31,14 +31,15 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: 'echo "MONGO_DB_USERNAME: ${{ env.MONGO_DB_USERNAME }}"'
+        run: | 
+          echo "MONGO_DB_USERNAME: ${{ env.MONGO_DB_USERNAME }}"
   deploy:
-    needs: test
+    needs: test 
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
-          'echo "MONGO_DB_USERNAME: ${{ env.MONGO_DB_USERNAME }}"'
-          'echo "MONGO_DB_NAME: ${{ env.MONGO_DB_NAME }}"'
+          echo "MONGO_DB_USERNAME: ${{ env.MONGO_DB_USERNAME }}"
+          echo "MONGO_DB_NAME: ${{ env.MONGO_DB_NAME }}"
 
 
